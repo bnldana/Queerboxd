@@ -9,13 +9,17 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
 </head>
 
 <body class="bg-dark" id="{{ $bodyId }}">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-            <a class="navbar-brand" href="http://85.215.133.227/">Queerboxd</a>
+            <div>
+                <a class="navbar-brand d-flex flex-row align-items-center" href="http://85.215.133.227/"> <img id="logo" src="{{ asset('queerboxd.svg') }}" class="mr-2">
+                    <p class="mb-0">Queerboxd</p>
+                </a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

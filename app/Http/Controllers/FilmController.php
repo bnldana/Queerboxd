@@ -45,15 +45,20 @@ class FilmController extends Controller
         $apiKey = env('TMDB_API_KEY');
         $tmdbId = $film->tmdb_id;
 
-        $response = Http::get("https://api.themoviedb.org/3/movie/{$tmdbId}?api_key={$apiKey}&language=en-US");
+        $response = Http::get("https://api.themoviedb.org/3/movie/{$tmdbId}?api_key={$apiKey}&language=en-US&append_to_response=images");
+
         if ($response->successful()) {
             $tmdbDetails = $response->json();
             $plot = $tmdbDetails['overview'] ?? 'No plot available.';
+
+            $backdropPath = $tmdbDetails['backdrop_path'] ?? null;
+            $backdropUrl = $backdropPath ? 'https://image.tmdb.org/t/p/original' . $backdropPath : null;
         } else {
             $plot = 'Failed to fetch plot.';
+            $backdropUrl = null;
         }
 
-        return view('films.show', compact('film', 'plot'));
+        return view('films.show', compact('film', 'plot', 'backdropUrl'));
     }
 
     public function search(Request $request)

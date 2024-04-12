@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="banner" class="container-fluid px-0 overflow-hidden">
+<div id="banner-home" class="banner container-fluid px-0 overflow-hidden">
     <p><a href="/films/3">Carol (2015)</a></p>
     <div class="bg-image">
         <div class="gradient-overlay">

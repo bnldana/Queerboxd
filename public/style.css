@@ -102,9 +102,17 @@ nav {
     padding: 8px 0 !important;
 }
 
+#logo {
+    height: 20px;
+}
+
 .navbar-brand {
     font-weight: bold;
     font-size: 1.8em !important;
+}
+
+.navbar-brand p {
+    color: white !important;
 }
 
 .navbar-nav {
@@ -121,12 +129,12 @@ a.nav-link:hover {
     color: white !important;
 }
 
-body:not(#home) main {
+body:not(#home, #filmsshow) main {
     background: #14181c url('content-bg.webp') 0 -1px repeat-x;
     padding-top: 20px;
 }
 
-#banner {
+.banner {
     height: 600px;
     width: 1200px;
     position: absolute;
@@ -162,7 +170,7 @@ body:not(#home) main {
     );
 }
 
-#banner p {
+.banner p {
     margin: 0;
     position: absolute;
     right: 10%;
@@ -171,7 +179,7 @@ body:not(#home) main {
     transform-origin: 0 0;
 }
 
-#banner p a {
+.banner p a {
     opacity: .4;
     color: #9ab;
     font-size: 0.8em;
@@ -184,12 +192,12 @@ body:not(#home) main {
     white-space: nowrap;
 }
 
-#banner p a:hover {
+.banner p a:hover {
     opacity: 1;
     text-decoration: none;
 }
 
-#content-wrap > *:not(#banner) {
+#content-wrap > *:not(.banner) {
     position: relative;
     z-index: 9999;
 }
@@ -199,7 +207,9 @@ body#home main {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h5 {
     font-family: "Copyright Klim Type Foundry", "TiemposHeadline-Bold", serif !important;
     font-weight: bold;
 }
@@ -357,9 +367,18 @@ img.movie-poster .overlay {
     width: 200px;
 }
 
+#banner-movie, .film-backdrop {
+    height: 450px;
+}
+
+.film-backdrop {
+    background-size: cover;
+}
+
 /* page avis */
 
-.rating {
+.rating,
+#review-title {
     border-bottom: 1px solid #456;
 }
 
@@ -375,7 +394,8 @@ img.movie-poster .overlay {
     color: #0092ef;
 }
 
-.rating-text {
+.rating-text,
+#plot {
     font-family: "Copyright Klim Type Foundry", serif !important;
     font-weight: normal;
 }
