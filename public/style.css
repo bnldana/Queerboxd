@@ -67,7 +67,8 @@
 }
 
 ::selection {
-    background-color: #0092ef;
+    background-color: #40BCF4;
+    color: white;
 }
 
 .bg-dark {
@@ -285,6 +286,36 @@ footer p {
 
 img.movie-poster {
     width: 200px;
+    transition: .2s ease-in cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+img.movie-poster .overlay {
+    border-width: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.movie-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+.overlay {
+    border: 1px solid #00e054;
+    border-radius: 3px;
+    bottom: calc(0px - 3px);
+    box-shadow: inset 0 0 1px 1px rgba(20,24,28,.125);
+    display: block;
+    left: calc(0px - 3px);
+    overflow: hidden;
+    position: absolute;
+    right: calc(0px - 3px);
+    text-indent: 110%;
+    top: calc(0px - 3px);
+    transition: border .1s linear;
+    white-space: nowrap;
 }
 
 .row {
@@ -351,4 +382,9 @@ img.movie-poster {
 
 img.movie-poster-small {
     width: 70px;
+}
+
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free" !important;
+    color: #00c030;
 }

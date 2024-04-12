@@ -8,6 +8,7 @@
     <title>Queerboxd</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
 </head>
 
@@ -21,10 +22,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item">
-                        <a class="nav-link" href="/movies">Movies</a>
+                        <a class="nav-link" href="/films">Films</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/ratings">Reviews</a>
+                        <a class="nav-link" href="/reviews">Reviews</a>
                     </li>
                 </ul>
             </div>

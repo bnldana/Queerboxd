@@ -2,8 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Add a review for {{ $movie->movie_title }}</h1>
-<form class="w-50 d-flex flex-column" action="{{ route('ratings.store') }}" method="POST">
+<h1>Add a review for {{ $film->movie_title }}</h1>
+<form class="w-50 d-flex flex-column" action="{{ route('reviews.store') }}" method="POST">
     @csrf
     <input type="hidden" name="movie_id" value="{{ request('movie_id') }}">
 

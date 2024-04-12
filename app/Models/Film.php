@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Movie extends Model
+class Film extends Model
 {
     use HasFactory;
 
@@ -13,8 +13,8 @@ class Movie extends Model
         'tmdb_id', 'movie_title', 'director', 'release_date', 'image_url'
     ];
 
-    public function ratings()
+    public function reviews()
     {
-        return $this->hasMany(Rating::class);
+        return $this->hasMany(Review::class, 'movie_id');
     }
 }

@@ -4,13 +4,13 @@
 
 @section('content')
 <div class="container">
-    <h1>Add a movie</h1>
+    <h1>Add a film</h1>
 
-    <form class="d-flex flex-column" id="movie_form" style="display:none;" action="{{ route('movies.store') }}" method="POST">
+    <form class="d-flex flex-column" id="movie_form" style="display:none;" action="{{ route('films.store') }}" method="POST">
         @csrf
         <input type="hidden" name="tmdb_id" id="tmdb_id">
         <div class="form-group">
-            <input type="text" id="movie_search" class="form-control" placeholder="Write a movie title to autofill the form">
+            <input type="text" id="movie_search" class="form-control" placeholder="Type in a title...">
             <div id="movie_suggestions"></div>
         </div>
         <div class="d-flex flex-row" style="width: 100%;">
@@ -27,7 +27,7 @@
                     <label class="mb-0" for="release_date">Release year</label>
                     <input type="text" class="mb-3 form-control" id="release_date" name="release_date">
                 </div>
-                <button type="submit" class="btn btn-primary">Add movie</button>
+                <button type="submit" class="btn btn-primary">Add film</button>
             </div>
             <div class="flex-grow-1" style="flex-basis: 30%; display: flex; justify-content: center; align-items: center;">
                 <div class="form-group">

@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
-use App\Models\Movie;
+use App\Models\Film;
 
-class MovieController extends Controller
+class FilmController extends Controller
 {
     public function index(Request $request)
     {
         $sort = $request->query('sort', 'title');
         $order = $request->query('order', 'asc');
 
-        $query = Movie::query();
+        $query = Film::query();
 
         if ($sort === 'movie_title') {
             $query->orderBy('movie_title', $order);
@@ -23,27 +23,27 @@ class MovieController extends Controller
             $query->orderBy('created_at', $order);
         }
 
-        $movies = $query->get();
+        $films = $query->get();
 
-        return view('movies.index', compact('movies'));
+        return view('films.index', compact('films'));
     }
 
     public function create()
     {
-        return view('movies.create');
+        return view('films.create');
     }
 
     public function store(Request $request)
     {
-        Movie::create($request->all());
-        return redirect()->route('movies.index');
+        Film::create($request->all());
+        return redirect()->route('films.index');
     }
 
     public function show(int $id)
     {
-        $movie = Movie::findOrFail($id);
+        $film = Film::findOrFail($id);
         $apiKey = env('TMDB_API_KEY');
-        $tmdbId = $movie->tmdb_id;
+        $tmdbId = $film->tmdb_id;
 
         $response = Http::get("https://api.themoviedb.org/3/movie/{$tmdbId}?api_key={$apiKey}&language=en-US");
         if ($response->successful()) {
@@ -53,7 +53,7 @@ class MovieController extends Controller
             $plot = 'Failed to fetch plot.';
         }
 
-        return view('movies.show', compact('movie', 'plot'));
+        return view('films.show', compact('film', 'plot'));
     }
 
     public function search(Request $request)
@@ -66,15 +66,15 @@ class MovieController extends Controller
 
         $response = Http::get($url);
 
-        $movies = $response->json()['results'] ?? [];
-        $movieList = array_map(function ($movie) {
+        $films = $response->json()['results'] ?? [];
+        $movieList = array_map(function ($film) {
             return [
-                'id' => $movie['id'],
-                'title' => $movie['title'],
-                'release_date' => $movie['release_date'] ? date('Y', strtotime($movie['release_date'])) : '',
-                'poster_path' => $movie['poster_path'] ?? null
+                'id' => $film['id'],
+                'title' => $film['title'],
+                'release_date' => $film['release_date'] ? date('Y', strtotime($film['release_date'])) : '',
+                'poster_path' => $film['poster_path'] ?? null
             ];
-        }, $movies);
+        }, $films);
 
         return response()->json($movieList);
     }
