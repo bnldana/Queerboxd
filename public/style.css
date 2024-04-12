@@ -1,0 +1,354 @@
+@font-face{
+    font-family: "TiemposHeadline-Bold";
+    src: url("https://db.onlinewebfonts.com/t/171d30888ae4dbce3d0224490887fb87.eot");
+    src: url("https://db.onlinewebfonts.com/t/171d30888ae4dbce3d0224490887fb87.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/171d30888ae4dbce3d0224490887fb87.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/171d30888ae4dbce3d0224490887fb87.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/171d30888ae4dbce3d0224490887fb87.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/171d30888ae4dbce3d0224490887fb87.svg#TiemposHeadline-Bold")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: 'Copyright Klim Type Foundry';
+    src: url('fonts/TiemposHeadline-Regular.woff2') format('woff2'),
+        url('fonts/TiemposHeadline-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Copyright Klim Type Foundry';
+    src: url('fonts/TiemposText-Bold.woff2') format('woff2'),
+        url('fonts/TiemposText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('fonts/Graphik-Regular.woff2') format('woff2'),
+        url('fonts/Graphik-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('fonts/Graphik-Medium.woff2') format('woff2'),
+        url('fonts/Graphik-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('fonts/Graphik-Semibold.woff2') format('woff2'),
+        url('fonts/Graphik-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('fonts/Graphik-Bold.woff2') format('woff2'),
+        url('fonts/Graphik-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+::selection {
+    background-color: #0092ef;
+}
+
+.bg-dark {
+    background-color: #14181c !important;
+}
+
+nav,
+#content-wrap,
+footer {
+    width: 950px;
+    margin: auto !important;
+}
+
+* {
+    color: white;
+    font-family: 'Graphik' !important;
+}
+
+header {
+    position: relative;
+    z-index: 9999;
+}
+
+header {
+    background-color: #14181c;
+    background: linear-gradient(180deg, #14181c 0, rgba(20, 24, 28, .945) 16.56%, rgba(20, 24, 28, .802) 30.85%, rgba(20, 24, 28, .606) 43.77%, rgba(20, 24, 28, .394) 56.23%, rgba(20, 24, 28, .198) 69.15%, rgba(20, 24, 28, .055) 83.44%, rgba(20, 24, 28, 0));
+    background-repeat: repeat-x;
+}
+
+nav {
+    padding: 8px 0 !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8em !important;
+}
+
+.navbar-nav {
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.9em !important;
+}
+
+a.nav-link {
+    height: 35px;
+}
+
+a.nav-link:hover {
+    color: white !important;
+}
+
+body:not(#home) main {
+    background: #14181c url('content-bg.webp') 0 -1px repeat-x;
+    padding-top: 20px;
+}
+
+#banner {
+    height: 600px;
+    width: 1200px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bg-image {
+    background-image: url('carol.webp');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      0deg, 
+      rgba(20, 24, 28, 1) 0%, 
+      rgba(16, 16, 16, 0) 70%),
+    linear-gradient(
+      90deg, 
+      rgba(20, 24, 28, 1) 0%, 
+      rgba(16, 16, 16, 0) 50%, 
+      rgba(20, 24, 28, 1) 100%
+    );
+}
+
+#banner p {
+    margin: 0;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translate3D(100%, 0, 0) rotate(-90deg);
+    transform-origin: 0 0;
+}
+
+#banner p a {
+    opacity: .4;
+    color: #9ab;
+    font-size: 0.8em;
+    display: inline-block;
+    max-width: 300px;
+    opacity: .6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity .2s;
+    white-space: nowrap;
+}
+
+#banner p a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+#content-wrap > *:not(#banner) {
+    position: relative;
+    z-index: 9999;
+}
+
+body#home main {
+    padding-top: 350px !important;
+}
+
+h1,
+h2 {
+    font-family: "Copyright Klim Type Foundry", "TiemposHeadline-Bold", serif !important;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.2em;
+    line-height: 1.4;
+}
+
+button,
+button[type=submit] {
+    background-color: #00c030 !important;
+    border: none !important;
+}
+
+button:hover,
+button[type=submit]:hover {
+    background-color: #00ac1c !important;
+}
+
+button>a,
+button>p,
+button[type=submit] {
+    text-decoration: none;
+    color: white !important;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+button>a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+input,
+textarea,
+select,
+option,
+span {
+    color: black;
+}
+
+p,
+strong,
+em {
+    color: #99aabb !important;
+}
+
+.latest-movies {
+    gap: 20px;
+}
+
+.latest-movies img,
+.movie-poster,
+.form-group #poster,
+img.movie-poster-small {
+    outline: 1px solid #def;
+    border-radius: 5px;
+}
+
+.carousel-caption {
+    position: relative !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    margin: 0 15%;
+}
+
+.carousel-inner {
+    width: 850px;
+}
+
+a.carousel-control-prev,
+a.carousel-control-next {
+    z-index: 100;
+}
+
+footer p {
+    font-size: .7rem;
+}
+
+/* page index films */
+
+img.movie-poster {
+    width: 200px;
+}
+
+.row {
+    gap: 25px 0;
+}
+
+/* page ajt film */
+
+#movie_search {
+    color: white !important;
+    background-color: hsla(0, 0%, 100%, .25);
+    border: none;
+}
+
+#movie_suggestions {
+    display: none;
+    height: 300px;
+    overflow-y: scroll;
+    background-color: white;
+    position: absolute;
+    width: 435px;
+}
+
+.movie-suggestion:hover {
+    cursor: pointer;
+    background-color:rgba(20, 24, 28, .055);
+}
+
+.movie-suggestion > img {
+    width: 50px;
+}
+
+#moviescreate img#poster {
+    height: 325px;
+}
+
+/* page film solo */
+#moviesshow img {
+    width: 200px;
+}
+
+/* page avis */
+
+.rating {
+    border-bottom: 1px solid #456;
+}
+
+.rating-movie-title a {
+    font-family: "Copyright Klim Type Foundry", serif !important;
+    font-weight: 600;
+    font-size: .7em;
+    color: white;
+}
+
+.rating-movie-title a:hover {
+    text-decoration: none;
+    color: #0092ef;
+}
+
+.rating-text {
+    font-family: "Copyright Klim Type Foundry", serif !important;
+    font-weight: normal;
+}
+
+img.movie-poster-small {
+    width: 70px;
+}
