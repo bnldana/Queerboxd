@@ -3,7 +3,7 @@
 
 @section('content')
 <div id="banner-home" class="banner container-fluid px-0 overflow-hidden">
-    <p><a href="/films/3">Carol (2015)</a></p>
+    <p><a href="/films/1">Bottoms (2023)</a></p>
     <div class="bg-image">
         <div class="gradient-overlay">
         </div>
@@ -12,21 +12,22 @@
 
 <div class="d-flex flex-column align-items-center" style="gap: 20px">
     <div class="d-flex flex-column align-items-center mb-5" style="gap: 20px">
-        <h2 class="text-center mb-0">The reference for LGBTQI+ films.<br>
-            Contribute to the list. Give your opinion. <br>
-            Discover your new favorite film.</h2>
+        <h2 class="text-center mb-0">Contribute to the list.<br>Give your opinion.<br>
+            Discover your new favorites.</h2>
         <button type="button" class="btn btn-light"><a href="{{ route('films.index') }}">See all films</a></button>
     </div>
 
     <div class="d-flex flex-column align-items-center mb-5" style="gap: 20px">
         @if($latestFilms->count() > 0)
         <h2>Latest films</h2>
-        <div class="latest-movies d-flex flex-row align-items-center gap-5">
+        <div class="latest-movies d-flex flex-row align-items-center gap-5 mb-4">
             @foreach($latestFilms as $film)
-            <div class="d-flex flex-column align-items-center mb-4">
-                <a href="{{ route('films.show', $film->id) }}">
-                    <img src="{{ $film->image_url }}" alt="Movie poster" style="max-width: 200px; height: auto;">
-                </a>
+            <div class="d-flex flex-column align-items-center mb-0 movie-container">
+                <div class="movie-wrapper" style="background-image: url('{{ $film->image_url }}');">
+                    <a href="{{ route('films.show', $film->id) }}">
+                        <span class="overlay"></span>
+                    </a>
+                </div>
             </div>
             @endforeach
         </div>
@@ -67,14 +68,4 @@
         @endif
     </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.carousel').carousel();
-    });
-</script>
-
 @endsection

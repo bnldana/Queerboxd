@@ -1,3 +1,7 @@
+@php
+use Illuminate\Support\Facades\Request;
+@endphp
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,7 +20,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
             <div>
-                <a class="navbar-brand d-flex flex-row align-items-center" href="http://85.215.133.227/"> <img id="logo" src="{{ asset('queerboxd.svg') }}" class="mr-2">
+                <a class="navbar-brand d-flex flex-row align-items-center" href="{{ route('home') }}">
+                    <img id="logo" src="{{ asset('queerboxd.svg') }}" class="mr-2">
                     <p class="mb-0">Queerboxd</p>
                 </a>
             </div>
@@ -26,17 +31,17 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item">
-                        <a class="nav-link" href="/films">Films</a>
+                        <a class="nav-link {{ Request::is('films') ? 'active' : '' }}" href="/films">Films</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/reviews">Reviews</a>
+                        <a class="nav-link {{ Request::is('reviews') ? 'active' : '' }}" href="/reviews">Reviews</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="px-4 d-flex flex-column align-items-center">
+    <main class="d-flex flex-column align-items-center">
         <div id="content-wrap">
             @yield('content')
         </div>
@@ -44,7 +49,7 @@
 
     <footer class="text-muted py-4 bg-dark ">
         <div class="container d-flex justify-content-md-center">
-            <p>© 2024 Queerboxd, inspired by <a href="https://letterboxd.com/">Letterboxd</a>. All rights reserved to their respective owners.</p>
+            <p class="text-center">© 2024 Queerboxd, inspired by <a href="https://letterboxd.com/">Letterboxd</a>. All rights reserved to their respective owners.<br> View the project repository <a href="https://github.com/bnldana/Queerboxd/">here</a>.</p>
         </div>
     </footer>
 
@@ -52,6 +57,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel();
+        });
+    </script>
 </body>
 
 </html>
